@@ -1,0 +1,14 @@
+a {
+  color: beige;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  font-size: calc(0.4rem);
+}
