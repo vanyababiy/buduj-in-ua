@@ -5,26 +5,40 @@ import "./NavLinks.css";
 
 const NavLinks = () => {
   return (
-    <ul className="nav-links">
-      <li>
-        <NavLink to="/home">ГОЛОВНА</NavLink>
-      </li>
-      <li>
-        <NavLink to="/about">ПРО НАМ</NavLink>
-      </li>
-      <li>
-        <NavLink to="/prices">ЦІНИ</NavLink>
-      </li>
-      <li>
-        <NavLink to="/work">НАШІ РОБОТИ</NavLink>
-      </li>
-      <li>
-        <NavLink to="/category">КАТЕГОРІЇ</NavLink>
-      </li>
-      <li>
-        <NavLink to="/auth">ВХІД</NavLink>
-      </li>
-    </ul>
+    <div className="nav-container">
+      <ul className="nav-links">
+        <li>
+          <NavLink to="/" exact>
+            ГОЛОВНА
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" exact>
+            ПРО НАC
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/prices" exact>
+            ЦІНИ
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/work" exact>
+            НАШІ РОБОТИ
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/category" exact>
+            КАТЕГОРІЇ
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/auth" exact>
+            ВХІД
+          </NavLink>
+        </li>
+      </ul>
+    </div>
   );
 };
 

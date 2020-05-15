@@ -15,6 +15,9 @@ const App = () => {
           <Route to="/" exact>
             <MainNavigation />
           </Route>
+          <Route to="/category" exact>
+            <MainNavigation />
+          </Route>
           <Redirect to="/" />
         </Switch>
       </Router>

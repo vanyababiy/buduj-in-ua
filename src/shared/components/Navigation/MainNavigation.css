@@ -1,0 +1,22 @@
+.main-navigation__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.main-navigation__title a {
+  font-size: calc(0.5rem + 1vw);
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(20, 20, 20);
+  font-family: "Anton", sans-serif;
+  font-weight: 600;
+  border-bottom: solid 0.1px grey;
+}

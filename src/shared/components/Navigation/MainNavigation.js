@@ -9,7 +9,7 @@ const MainNavigation = (props) => {
   return (
     <MainHeader>
       <h1 className="main-navigation__title">
-        <Link to="/">БУДУЙ В УКРАЇНІ</Link>
+        <Link to="/">БУДУЙ ІН UA</Link>
       </h1>
       <NavLinks />
     </MainHeader>
