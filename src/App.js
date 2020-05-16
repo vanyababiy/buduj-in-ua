@@ -12,12 +12,8 @@ const App = () => {
     <React.Fragment>
       <Router>
         <Switch>
-          <Route to="/" exact>
-            <MainNavigation />
-          </Route>
-          <Route to="/category" exact>
-            <MainNavigation />
-          </Route>
+          <Route to="/" component={MainNavigation} exact></Route>
+          <Route to="/category" component={MainNavigation} exact />
           <Redirect to="/" />
         </Switch>
       </Router>
