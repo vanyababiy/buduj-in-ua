@@ -1,30 +1,31 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import "./MainNavigation.css";
 import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
-import CategoryNavLinks from "./CategoryNavLinks";
+
+import mainLinksGroup from "../../context/mainLinksGroup";
 
 const MainNavigation = (props) => {
-  if (props.location.pathname === "/category") {
-    return (
-      <MainHeader>
-        <h1 className="main-navigation__title">
-          <Link to="/">БУДУЙ ІН UA</Link>
-        </h1>
-        <CategoryNavLinks />
-      </MainHeader>
-    );
+  const array = [];
+  for (let i = 0; i < mainLinksGroup[0].length; i++) {
+    array[i] = [mainLinksGroup[0][i], mainLinksGroup[i + 1]];
   }
-  return (
-    <MainHeader>
-      <h1 className="main-navigation__title">
-        <Link to="/">БУДУЙ ІН UA</Link>
-      </h1>
-      <NavLinks />
-    </MainHeader>
-  );
+  console.log(array);
+  const entries = new Map(array);
+
+  const mainLinks = Object.fromEntries(entries);
+
+  for (let [key, value] of Object.entries(mainLinks)) {
+    if (props.location.pathname === `/${key}`) {
+      return (
+        <MainHeader>
+          <NavLinks links={value} />
+        </MainHeader>
+      );
+    }
+  }
 };
 
 export default withRouter(MainNavigation);

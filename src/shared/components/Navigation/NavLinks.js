@@ -1,46 +1,24 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 import "./NavLinks.css";
 
-const NavLinks = () => {
- 
+const NavLinks = (props) => {
   return (
     <div className="nav-container">
       <ul className="nav-links">
-        <li>
-          <NavLink to="/" exact>
-            ГОЛОВНА
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/about" exact>
-            ПРО НАC
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/prices" exact>
-            ЦІНИ
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/work" exact>
-            НАШІ РОБОТИ
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/category" exact>
-            КАТЕГОРІЇ
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/auth" exact>
-            ВХІД
-          </NavLink>
-        </li>
+        {props.links.map((link) => {
+          return (
+            <li key={link.id}>
+              <NavLink to={`${link.url}`} exact>
+                {link.text}
+              </NavLink>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
 };
 
-export default NavLinks;
+export default withRouter(NavLinks);
